@@ -1,19 +1,18 @@
 // Add imports above this line
 import { galleryItems } from './gallery-items';
-// Change code below this line
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+console.log(SimpleLightbox);
+// Change code below this line
 
 console.log(galleryItems);
 
+export const galleryEl = document.querySelector(`.gallery`);
+export const galleryItemsEl = createdGalleryItemsEl(galleryItems);
 
-
-const galleryEl = document.querySelector(`.gallery`);
-const galleryItemsEl = createdGalleryItemsEl(galleryItems);
-
-galleryEl.insertAdjacentHTML(`beforeend`, galleryItemsEl);
+export const galleryAdjacentHTML = galleryEl.insertAdjacentHTML(`beforeend`, galleryItemsEl);
  
-function createdGalleryItemsEl(galleryItems) {
+export function createdGalleryItemsEl(galleryItems) {
   return galleryItems
     .map(({ original, preview, description }) => {
    return `<li class="gallery__item">
@@ -31,7 +30,7 @@ function createdGalleryItemsEl(galleryItems) {
 
 console.log(galleryItemsEl);
 
-const lightbox = new SimpleLightbox('.gallery li a', {
+export const lightbox = new SimpleLightbox('.gallery li a', {
   captionsData: `alt`,
   captionSelector: `img`,
   captionType: 'img alt="${description}"',
