@@ -1,4 +1,4 @@
-import LodashThrottle from `lodash.throttle`;
+import LodashThrottle from"lodash.throttle";
 
 
 export const form = document.querySelector(`.feedback-form`);
@@ -13,9 +13,7 @@ export const formAddEvtInput = form.addEventListener(`input`,throttle(onAllForm,
 export const STORAGE_KEY = `feedback-form-state`; 
 export const ObjectForm = {};
 
-//     const {
-//     elements: { email, password }
-//   } = event.currentTarget;
+
 
 populateTextareaInput() 
 
